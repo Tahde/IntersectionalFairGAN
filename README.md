@@ -20,3 +20,54 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
 1. Clone the repository:
    ```bash
    git clone https://github.com/Tahde/IntersectionalFairGAN.git
+
+
+### Running the Project
+
+1. **Generate CSV Files**:
+   After identifying the best general and fairness models (located in the `best_models` folder), run the following script to generate the CSV files for the Adult dataset:
+
+   ```bash
+   python Intersectional-TabFair-Adult-Csv-generator.py
+   ```
+
+   This script generates CSV files based on the trained models.
+
+2. **Train the Model**:
+   To train the IntersectionalFairGAN model, use the following script:
+
+   ```bash
+   python scripts/train_IntersectionFairGAN.py
+   ```
+
+   The training process involves two phases:
+   - **Phase I**: We train the generator without applying any fairness constraints (i.e., setting λf = 0).
+   - **Phase II**: We apply an intersectional demographic parity constraint by setting the fairness coefficient λf to an appropriate value, balancing fairness and fidelity in the learned representations.
+
+3. **TabFairGAN Loss Function**:
+   In the training process, we modify TabFairGAN’s loss function as follows:
+
+   ```python
+   TG = -E(D(x, y, s)) - λf * LFair(x, y, s, A)
+   ```
+
+   Where:
+   - **λf**: Coefficient controlling the trade-off between fidelity and fairness.
+   - **D(x, y, s)**: The critic function from TabFairGAN.
+   - **LFair(x, y, s, A)**: The fairness loss function.
+
+4. **CTGAN Loss Function**:
+   We also modify CTGAN’s loss function to include the fairness component:
+
+   ```python
+   CG = -1/m * Σ(CriticCTGAN(r, cond)) + CrossEntropy(d, m) + λf * LFair(x, y, s, A)
+   ```
+
+   Where:
+   - **r, cond**: Synthetic data and conditional vectors.
+   - **d, m**: Predicted values and mask vectors.
+   - **λf**: The fairness coefficient, adjusted during Phase II for fine-tuning.
+
+5. **Selecting λf**:
+   During the training process, the fairness coefficient (λf) is adjusted for each dataset. More details on selecting the best λf are provided in the paper's methodology.
+
