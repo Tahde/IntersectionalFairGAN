@@ -22,28 +22,27 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
    git clone https://github.com/Tahde/IntersectionalFairGAN.git
 
 
+
 ### Running the Project
 
-
-
 1. **Train the Model**:
-   To train the IntersectionalFairGAN model, use the following script:
+   To train the IntersectionalFairGAN model, run:
 
    ```bash
    python scripts/train_IntersectionFairGAN.py
    ```
 
-   The training process is split into two phases:
-   - **Phase I**: The generator is trained without any fairness constraints by setting λf = 0 (pre-fairness). The general models from this phase are saved in a separate folder called `general_models`.
-   - **Phase II**: An intersectional demographic parity constraint is applied. We experiment with λf in the range [0, 2] for TabFairGAN and [0, 1] for CTGAN to identify the best value that balances fairness and fidelity in the learned representations. The models from this phase are saved in the `fairness_models` folder.
+   The training consists of two phases:
+   - **Phase I**: Trains the generator without fairness constraints (λf = 0), saving models in the `general_models` folder.
+   - **Phase II**: Applies an intersectional demographic parity constraint, experimenting with λf in the range [0, 2] for TabFairGAN and [0, 1] for CTGAN, saving models in the `fairness_models` folder.
 
-   The training process is repeated 10 times for each λf, and metrics such as **accuracy**, **F1 score**, and **demographic parity** are used to evaluate performance. More details on selecting the best λf are provided in the paper's methodology.
-   1. **Generate CSV Files**:
-   After identifying the best general and fairness models (located in the `best_models` folder), run the following script to generate the CSV files for the Adult dataset:
+   The training is repeated 10 times for each λf, and the **best models** are manually placed in the `best_models` folder for CSV generation.
+
+2. **Generate CSV Files**:
+   After placing the best models in the `best_models` folder, generate CSV files using:
 
    ```bash
    python Intersectional-TabFair-Adult-Csv-generator.py
    ```
 
-   This script generates CSV files based on the trained models.
 
