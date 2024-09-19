@@ -48,11 +48,6 @@ Yes, adding a **Citations** section is a good practice, especially if your repos
 ---
 
 ## Citations
-Here’s how you can include the citation for your paper in the README, along with citations for TabFairGAN and CTGAN:
-
----
-
-## Citations
 If you use this code, please cite the following:
    ```
    @inproceedings{dehdarirad2024intersectionalfairgan,
