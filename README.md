@@ -23,11 +23,6 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
 
 
 ### Running the Project
-Here’s an updated version incorporating the detail that general models (pre-fairness and λf = 0) are saved in two different folders for each phase:
-
----
-
-### Running the Project
 
 
 
