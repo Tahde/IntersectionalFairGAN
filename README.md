@@ -54,8 +54,6 @@ Here’s how you can include the citation for your paper in the README, along wi
 
 ## Citations
 If you use this code, please cite the following:
-
-- **Your Paper**:
    ```
    @inproceedings{dehdarirad2024intersectionalfairgan,
        title={Enhancing Tabular GAN Fairness: The Impact of Intersectional Feature Selection},
