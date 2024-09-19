@@ -21,8 +21,6 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
    ```bash
    git clone https://github.com/Tahde/IntersectionalFairGAN.git
 
-
-
 ### Running the Project
 
 1. **Train the Model**:
@@ -33,8 +31,8 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
    ```
 
    The training consists of two phases:
-   - **Phase I**: Trains the generator without fairness constraints (λf = 0), saving models in the `general_models` folder.
-   - **Phase II**: Applies an intersectional demographic parity constraint, experimenting with λf in the range [0, 2] for TabFairGAN and [0, 1] for CTGAN, saving models in the `fairness_models` folder.
+   - **Phase I**: Trains the generator without fairness constraints (λf = 0), and the best model is selected based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
+   - **Phase II**: Applies an intersectional demographic parity constraint. The best model is selected based on the **highest absolute difference in demographic parity**, while also considering the **lowest F1 difference** and **lowest accuracy difference**. The fairness models are saved in the `fairness_models` folder.
 
    The training is repeated 10 times for each λf, and the **best models** are manually placed in the `best_models` folder for CSV generation.
 
@@ -44,5 +42,4 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
    ```bash
    python Intersectional-TabFair-Adult-Csv-generator.py
    ```
-
 
