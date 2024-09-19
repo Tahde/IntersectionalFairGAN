@@ -24,7 +24,7 @@ Ensure you have the following installed:
 ### Running the Project
 
 1. **Train the Model**:
-   To train the IntersectionalFairGAN model for TabFairGAN, run:
+   To train the IFGAN model for TabFairGAN, run:
 
    ```bash
    python IntersectionTabFair/train_IntersectionFairGAN.py
