@@ -43,4 +43,18 @@ Ensure you have the following installed:
    ```bash
    python Intersectional-TabFair-Adult-Csv-generator.py
    ```
+Yes, adding a **Citations** section is a good practice, especially if your repository is based on academic work or uses models and methods from other research papers. Here’s how you can incorporate a **Citations** section into your README:
+
+---
+
+## Citations
+If you use this code, please cite the following:
+
+@inproceedings{dehdarirad2024intersectionalfairgan,
+    title={Enhancing Tabular GAN Fairness: The Impact of Intersectional Feature Selection},
+    author={Tahereh Dehdarirad and Ericka Johnson and Gabriel Eilertsen and Saghi Hajisharif},
+    booktitle={Proceedings of the 23rd International Conference on Machine Learning and Applications (ICMLA 2024)},
+    year={2024}
+}
+
 
