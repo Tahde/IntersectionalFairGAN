@@ -23,8 +23,27 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
 
 
 ### Running the Project
+Here’s an updated version incorporating the detail that general models (pre-fairness and λf = 0) are saved in two different folders for each phase:
 
-1. **Generate CSV Files**:
+---
+
+### Running the Project
+
+
+
+1. **Train the Model**:
+   To train the IntersectionalFairGAN model, use the following script:
+
+   ```bash
+   python scripts/train_IntersectionFairGAN.py
+   ```
+
+   The training process is split into two phases:
+   - **Phase I**: The generator is trained without any fairness constraints by setting λf = 0 (pre-fairness). The general models from this phase are saved in a separate folder called `general_models`.
+   - **Phase II**: An intersectional demographic parity constraint is applied. We experiment with λf in the range [0, 2] for TabFairGAN and [0, 1] for CTGAN to identify the best value that balances fairness and fidelity in the learned representations. The models from this phase are saved in the `fairness_models` folder.
+
+   The training process is repeated 10 times for each λf, and metrics such as **accuracy**, **F1 score**, and **demographic parity** are used to evaluate performance. More details on selecting the best λf are provided in the paper's methodology.
+   1. **Generate CSV Files**:
    After identifying the best general and fairness models (located in the `best_models` folder), run the following script to generate the CSV files for the Adult dataset:
 
    ```bash
@@ -32,42 +51,4 @@ We build upon two state-of-the-art GAN models for tabular data generation, **Tab
    ```
 
    This script generates CSV files based on the trained models.
-
-2. **Train the Model**:
-   To train the IntersectionalFairGAN model, use the following script:
-
-   ```bash
-   python scripts/train_IntersectionFairGAN.py
-   ```
-
-   The training process involves two phases:
-   - **Phase I**: We train the generator without applying any fairness constraints (i.e., setting λf = 0).
-   - **Phase II**: We apply an intersectional demographic parity constraint by setting the fairness coefficient λf to an appropriate value, balancing fairness and fidelity in the learned representations.
-
-3. **TabFairGAN Loss Function**:
-   In the training process, we modify TabFairGAN’s loss function as follows:
-
-   ```python
-   TG = -E(D(x, y, s)) - λf * LFair(x, y, s, A)
-   ```
-
-   Where:
-   - **λf**: Coefficient controlling the trade-off between fidelity and fairness.
-   - **D(x, y, s)**: The critic function from TabFairGAN.
-   - **LFair(x, y, s, A)**: The fairness loss function.
-
-4. **CTGAN Loss Function**:
-   We also modify CTGAN’s loss function to include the fairness component:
-
-   ```python
-   CG = -1/m * Σ(CriticCTGAN(r, cond)) + CrossEntropy(d, m) + λf * LFair(x, y, s, A)
-   ```
-
-   Where:
-   - **r, cond**: Synthetic data and conditional vectors.
-   - **d, m**: Predicted values and mask vectors.
-   - **λf**: The fairness coefficient, adjusted during Phase II for fine-tuning.
-
-5. **Selecting λf**:
-   During the training process, the fairness coefficient (λf) is adjusted for each dataset. More details on selecting the best λf are provided in the paper's methodology.
 
