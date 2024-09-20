@@ -16,7 +16,7 @@ def main():
     epochs = 200
     fair_epochs = 30
     lamda_values = np.arange(0, 2.05, 0.05)
-    out_file = "results_sub_final_one_adult_new.log"
+    out_file = "logs.log"
     fairness_model_path = "fairness_models_adult"
     general_model_path = "general_models_adult"
     
