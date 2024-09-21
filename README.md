@@ -1,4 +1,4 @@
-# IntersectionalFairGAN
+# Intersectional FairGAN
 ## Description
 
 This repository implements **IntersectionalFairGAN (IFGAN)**, a tool for addressing fairness in machine learning models by considering the intersectionality of sensitive attributes. These codes are based on the paper _"Enhancing Tabular GAN Fairness: The Impact of Intersectional Feature Selection."_ 
