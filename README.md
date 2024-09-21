@@ -54,8 +54,6 @@ Training is repeated 10 times for each λf, and the best models are manually pla
    python scripts/train_IntersectionFairGAN.py
 
    ```
-3. The dataset will be loaded from the `data/` folder, and results will be saved in `TabFairGAN/results/`.
-
 #### Running Intersectional Fair CTGAN (IFCTGAN)
 1. Navigate to the `CTGAN` folder:
    ```bash
