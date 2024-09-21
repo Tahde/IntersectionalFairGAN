@@ -51,7 +51,7 @@ Training is repeated 10 times for each λf, and the best models are manually pla
    ```
 2. Run the model training script:
    ```bash
-   python scripts/train_IntersectionFairGAN.py
+   python scripts/train_ITFGAN.py
 
    ```
 #### Running Intersectional Fair CTGAN (IFCTGAN)
