@@ -17,7 +17,7 @@ This project contains two models, each located in its own folder. Follow the ste
 - `IntersectionTabFair/`: Contains the implementation of Intersectional TabFairGAN.
 - `IntersectionCTGAN/`: Contains the implementation of Intersectional Fair CTGAN.
 - Both models share the same data set, Adult.csv.
-
+---
 ### Installing Dependencies
 
 The models have different dependencies. 
