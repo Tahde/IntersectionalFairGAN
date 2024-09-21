@@ -25,13 +25,14 @@ pip install -r requirements.txt
 ```
 
 #### Running Intersectional TabFairGAN 
-1. Navigate to the `TabFairGAN` folder:
+1. Navigate to the `IntersectionTabFair` folder:
    ```bash
-   cd TabFairGAN
+   cd IntersectionTabFair/scripts
    ```
 2. Run the model training script:
    ```bash
-   python train_tabfairgan.py
+   python train_IntersectionFairGAN.py
+
    ```
 3. The dataset will be loaded from the `data/` folder, and results will be saved in `TabFairGAN/results/`.
 
