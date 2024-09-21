@@ -21,14 +21,14 @@ This project contains two models, each located in its own folder. Follow the ste
 ### Installing Dependencies
 
 The models have different dependencies. 
-#### For **TabFairGAN**
+#### For **Intersectional TabFairGAN**
 Ensure you have the following installed:
 - Python 3.7+
 - PyTorch
 - Pandas
 - Scikit-learn
 
-#### For **CTGAN**
+#### For **Intersectional Fair CTGAN**
 The following dependencies are required:
 - `numpy==1.24.3`
 - `pandas==2.2.2`
