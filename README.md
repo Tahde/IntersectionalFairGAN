@@ -23,6 +23,12 @@ Both models require the same dependencies. You can install them by running the f
 ```bash
 pip install -r requirements.txt
 ```
+Ensure you have the following installed:
+- **Python 3.7+**
+- **PyTorch**
+- **Pandas**
+- **Scikit-learn**
+- 
 #### Training Phases for Both Models
 The training for each model consists of two phases:
 - **Phase I**: Trains the generator without fairness constraints (λf = 0), selecting the best model based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
@@ -52,20 +58,6 @@ Training is repeated 10 times for each λf, and the best models are manually pla
    ```bash
    python main.py
    ```
-
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Tahde/IntersectionalFairGAN.git
-   
-## Dependencies
-Ensure you have the following installed:
-- **Python 3.7+**
-- **PyTorch**
-- **Pandas**
-- **Scikit-learn**
-
 
 2. **Generate CSV Files**:
    After placing the best models in the `best_models` folder, generate CSV files using:
