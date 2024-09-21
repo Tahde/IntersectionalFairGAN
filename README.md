@@ -23,6 +23,13 @@ Both models require the same dependencies. You can install them by running the f
 ```bash
 pip install -r requirements.txt
 ```
+#### Training Phases for Both Models
+The training for each model consists of two phases:
+- **Phase I**: Trains the generator without fairness constraints (λf = 0), selecting the best model based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
+  
+- **Phase II**: Adds an intersectional demographic parity constraint. The best model is selected based on the **highest absolute difference in demographic parity**, while minimizing differences in **F1 score** and **accuracy**. The fairness models are saved in the `fairness_models` folder.
+
+Training is repeated 10 times for each λf, and the best models are manually placed in the `best_models` folder for generating CSV files.
 
 #### Running Intersectional TabFairGAN 
 1. Navigate to the `IntersectionTabFair` folder:
@@ -39,11 +46,11 @@ pip install -r requirements.txt
 #### Running Intersectional Fair CTGAN (IFCTGAN)
 1. Navigate to the `CTGAN` folder:
    ```bash
-   cd CTGAN
+   cd IntersectionCTGAN
    ```
 2. Run the model training script:
    ```bash
-   python train_ctgan.py
+   python main.py
    ```
 
 
@@ -95,3 +102,7 @@ If you use this code, please cite the following:
        year={2024}
    }
    ```
+
+
+
+
