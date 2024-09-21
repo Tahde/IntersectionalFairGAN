@@ -11,11 +11,11 @@ It builds upon two state-of-the-art GAN models for tabular data generation, **[T
 
 ### How to Run the Models
 
-This project contains two models built on the same dataset, each located in its own folder. Follow the steps below to install dependencies and run each model.
+This project contains two models, each located in its own folder. Follow the steps below to install dependencies and run each model.
 
 #### Folder Structure
-- `TabFairGAN/`: Contains the implementation of Intersectional TabFairGAN.
-- `CTGAN/`: Contains the implementation of Intersectional Fair CTGAN.
+- `IntersectionTabFair/`: Contains the implementation of Intersectional TabFairGAN.
+- `IntersectionCTGAN/`: Contains the implementation of Intersectional Fair CTGAN.
 - Both models share the same data set, Adult.csv.
 
 #### Installing Dependencies
