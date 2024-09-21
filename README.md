@@ -28,7 +28,6 @@ Ensure you have the following installed:
 - **PyTorch**
 - **Pandas**
 - **Scikit-learn**
-- 
 #### Training Phases for Both Models
 The training for each model consists of two phases:
 - **Phase I**: Trains the generator without fairness constraints (λf = 0), selecting the best model based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
@@ -58,13 +57,26 @@ Training is repeated 10 times for each λf, and the best models are manually pla
    ```bash
    python main.py
    ```
+### Generating CSV Files
 
-2. **Generate CSV Files**:
-   After placing the best models in the `best_models` folder, generate CSV files using:
+Once the best models have been manually placed in the `best_models` folder after training, you can generate synthetic data CSV files for both models.
 
+#### For Intersectional TabFairGAN:
+1. Ensure you are in the `IntersectionTabFair` folder (as explained in the **Running Intersectional TabFairGAN** section).
+2. Run the following script to generate CSV files using the best models:
    ```bash
-   python Intersectional-TabFair-Adult-Csv-generator.py
+   python scripts/generate_TabFairGAN_CSV.py
    ```
+3. The generated CSV files will be saved in the `IntersectionTabFair/generated_csv_files/` folder.
+
+#### For Intersectional CTGAN:
+1. Ensure you are in the `IntersectionCTGAN` folder (as explained in the **Running Intersectional CTGAN** section).
+2. Run the following script to generate CSV files using the best models:
+   ```bash
+   python scripts/generate_CTGAN_CSV.py
+   ```
+3. The generated CSV files will be saved in the `IntersectionCTGAN/generated_csv_files/` folder.
+
 
 ## Citations
 If you use this code, please cite the following:
