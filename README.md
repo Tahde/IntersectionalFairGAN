@@ -18,21 +18,15 @@ This project contains two models, each located in its own folder. Follow the ste
 - `IntersectionCTGAN/`: Contains the implementation of Intersectional Fair CTGAN.
 - Both models share the same data set, Adult.csv.
 
-#### Installing Dependencies
-To clarify the dependencies for both models on your GitHub page, you can revise the instructions to specify that each model has different requirements. Here's how you can update the section:
-
----
-
 ### Installing Dependencies
 
-The models have different dependencies. Follow the instructions below to install the specific dependencies for each model.
-
+The models have different dependencies. 
 #### For **TabFairGAN**
 Ensure you have the following installed:
-- **Python 3.7+**
-- **PyTorch**
-- **Pandas**
-- **Scikit-learn**
+- Python 3.7+
+- PyTorch
+- Pandas
+- Scikit-learn
 
 #### For **CTGAN**
 The following dependencies are required:
