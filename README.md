@@ -66,21 +66,6 @@ Ensure you have the following installed:
 - **Pandas**
 - **Scikit-learn**
 
-### Running the Project
-
-1. **Train the Model**:
-   To train the IFGAN model for TabFairGAN, run:
-
-   ```bash
-   python IntersectionTabFair/scripts/train_IntersectionFairGAN.py
-
-   ```
-
-   The training consists of two phases:
-   - **Phase I**: Trains the generator without fairness constraints (λf = 0), and the best model is selected based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
-   - **Phase II**: Applies an intersectional demographic parity constraint. The best model is selected based on the **highest absolute difference in demographic parity**, while also considering the **lowest F1 difference** and **lowest accuracy difference**. The fairness models are saved in the `fairness_models` folder.
-
-   The training is repeated 10 times for each λf, and the **best models** are manually placed in the `best_models` folder for CSV generation.
 
 2. **Generate CSV Files**:
    After placing the best models in the `best_models` folder, generate CSV files using:
@@ -88,9 +73,6 @@ Ensure you have the following installed:
    ```bash
    python Intersectional-TabFair-Adult-Csv-generator.py
    ```
-Yes, adding a **Citations** section is a good practice, especially if your repository is based on academic work or uses models and methods from other research papers. Here’s how you can incorporate a **Citations** section into your README:
-
----
 
 ## Citations
 If you use this code, please cite the following:
