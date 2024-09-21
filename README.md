@@ -9,6 +9,43 @@ It builds upon two state-of-the-art GAN models for tabular data generation, **[T
   
 - **[CTGAN](https://github.com/sdv-dev/CTGAN)**: We modified CTGAN's generator loss function to incorporate an intersectional demographic parity constraint, addressing fairness across multiple sensitive attributes.
 
+### How to Run the Models
+
+This project contains two models built on the same dataset, each located in its own folder. Follow the steps below to install dependencies and run each model.
+
+#### Folder Structure
+- `TabFairGAN/`: Contains the implementation of Intersectional TabFairGAN.
+- `CTGAN/`: Contains the implementation of Intersectional Fair CTGAN.
+- Both models share the same data set, Adult.csv.
+
+#### Installing Dependencies
+Both models require the same dependencies. You can install them by running the following command from the root directory:
+```bash
+pip install -r requirements.txt
+```
+
+#### Running Intersectional TabFairGAN 
+1. Navigate to the `TabFairGAN` folder:
+   ```bash
+   cd TabFairGAN
+   ```
+2. Run the model training script:
+   ```bash
+   python train_tabfairgan.py
+   ```
+3. The dataset will be loaded from the `data/` folder, and results will be saved in `TabFairGAN/results/`.
+
+#### Running Intersectional Fair CTGAN (IFCTGAN)
+1. Navigate to the `CTGAN` folder:
+   ```bash
+   cd CTGAN
+   ```
+2. Run the model training script:
+   ```bash
+   python train_ctgan.py
+   ```
+
+
 ## Installation
 1. Clone the repository:
    ```bash
