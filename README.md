@@ -3,11 +3,11 @@
 
 This repository implements **IntersectionalFairGAN (IFGAN)**, a tool for addressing fairness in machine learning models by considering the intersectionality of sensitive attributes. These codes are based on the paper _"Enhancing Tabular GAN Fairness: The Impact of Intersectional Feature Selection."_ 
 
-We build upon two state-of-the-art GAN models for tabular data generation, **[TabFairGAN](https://github.com/amirarsalan90/TabFairGAN)** and **[CTGAN](https://github.com/sdv-dev/CTGAN)**, modifying the loss function to include an intersectional demographic parity constraint.
+It builds upon two state-of-the-art GAN models for tabular data generation, **[TabFairGAN](https://github.com/amirarsalan90/TabFairGAN)** and **[CTGAN](https://github.com/sdv-dev/CTGAN)**, modifying the loss function to include an intersectional demographic parity constraint.
 
-- **[TabFairGAN](https://github.com/amirarsalan90/TabFairGAN)**: Based on Wasserstein GAN, generates synthetic data and applies a demographic parity fairness constraint. We extended this to handle intersectionality, focusing on two sensitive features (e.g., Gender-Age in the Adult dataset).
+- **[TabFairGAN](https://github.com/amirarsalan90/TabFairGAN)**: We extended this model to handle intersectionality by modifying the loss function, focusing on two sensitive features (e.g., Gender-Age in the Adult dataset).
   
-- **[CTGAN](https://github.com/sdv-dev/CTGAN)**: Designed to generate high-quality synthetic tabular data by addressing imbalanced data. We modified CTGAN to include a demographic parity constraint for intersectionality in the generator’s loss function.
+- **[CTGAN](https://github.com/sdv-dev/CTGAN)**: We modified CTGAN's generator loss function to incorporate an intersectional demographic parity constraint, addressing fairness across multiple sensitive attributes.
 
 ## Installation
 1. Clone the repository:
