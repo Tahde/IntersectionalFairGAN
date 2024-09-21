@@ -19,15 +19,29 @@ This project contains two models, each located in its own folder. Follow the ste
 - Both models share the same data set, Adult.csv.
 
 #### Installing Dependencies
-Both models require the same dependencies. You can install them by running the following command from the root directory:
-```bash
-pip install -r requirements.txt
-```
+To clarify the dependencies for both models on your GitHub page, you can revise the instructions to specify that each model has different requirements. Here's how you can update the section:
+
+---
+
+### Installing Dependencies
+
+The models have different dependencies. Follow the instructions below to install the specific dependencies for each model.
+
+#### For **TabFairGAN**
 Ensure you have the following installed:
 - **Python 3.7+**
 - **PyTorch**
 - **Pandas**
 - **Scikit-learn**
+
+#### For **CTGAN**
+The following dependencies are required:
+- `numpy==1.24.3`
+- `pandas==2.2.2`
+- `rdt==1.12.1`
+- `torch==2.4.0`
+- `tqdm==4.66.5`
+---
 #### Training Phases for Both Models
 The training for each model consists of two phases:
 - **Phase I**: Trains the generator without fairness constraints (λf = 0), selecting the best model based on the lowest sum of differences in **accuracy**, **F1 score**, and **demographic parity** compared to the original data. The general models are saved in the `general_models` folder.
