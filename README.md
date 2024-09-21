@@ -8,7 +8,7 @@ It builds upon two state-of-the-art GAN models for tabular data generation, **[T
 - **[TabFairGAN](https://github.com/amirarsalan90/TabFairGAN)**: We extended this model to handle intersectionality by modifying the loss function, focusing on two sensitive features (e.g., Gender-Age in the Adult dataset).
   
 - **[CTGAN](https://github.com/sdv-dev/CTGAN)**: We modified CTGAN's generator loss function to incorporate an intersectional demographic parity constraint, addressing fairness across multiple sensitive attributes.
-
+---
 ### How to Run the Models
 
 This project contains two models, each located in its own folder. Follow the steps below to install dependencies and run each model.
@@ -63,6 +63,7 @@ Training is repeated 10 times for each λf, and the best models are manually pla
    ```bash
    python main.py
    ```
+---   
 ### Generating CSV Files
 
 Once the best models have been manually placed in the `best_models` folder after training, you can generate synthetic data CSV files for both models.
@@ -82,7 +83,7 @@ Once the best models have been manually placed in the `best_models` folder after
    python scripts/generate_CTGAN_CSV.py
    ```
 3. The generated CSV files will be saved in the `IntersectionCTGAN/generated_csv_files/` folder.
-
+---
 
 ## Citations
 If you use this code, please cite the following:
